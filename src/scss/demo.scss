@@ -1,0 +1,145 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    @include sizing;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    width: 100%;
+    height: pxTorem(50px);
+    @include box_flex;
+    @include align;
+    padding: 0 pxTorem(20px);
+    img {
+        width: pxTorem(45px);
+    }
+    .nav {
+        @include flex;
+        height: 100%;
+        overflow: hidden;
+        ul {
+            width: 125%;
+            height: 100%;
+            @include box_flex;
+            @include align;
+            li {
+                @include flex;
+                text-align: center;
+                position: relative;
+                a {
+                    font-size: pxTorem(16px);
+                    color: #a4adaf;
+                }
+            }
+            li.active {
+                a {
+                    color: #53a6a1;
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    width: pxTorem(15px);
+                    height: pxTorem(3px);
+                    background: #53a6a1;
+                    position: absolute;
+                    bottom: pxTorem(-7px);
+                    left: 35%;
+                }
+            }
+        }
+    }
+    span {
+        width: pxTorem(25px);
+        color: #b79d7b;
+        font-size: pxTorem(20px)!important;
+    }
+}
+
+section {
+    width: 100%;
+    @include flex;
+    overflow: hidden;
+    overflow-y: scroll;
+    .swiper-container {
+        width: 100%;
+        .swiper-wrapper {
+            width: 100%;
+            .swiper-slide {
+                width: 100%;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    .list {
+        width: 100%;
+        height: auto;
+        padding: 0 pxTorem(20px);
+        li {
+            width: 100%;
+            height: pxTorem(120px);
+            overflow: hidden;
+            border-bottom: solid pxTorem(1px) #e6e6e6;
+            dl {
+                width: 100%;
+                height: 100%;
+                @include box_flex;
+                @include align;
+                @include justify(space-between);
+                dt {
+                    @include flex;
+                    padding-right: pxTorem(20px);
+                    h2 {
+                        font-size: pxTorem(18px);
+                    }
+                    p {
+                        margin: pxTorem(10px) 0;
+                        color: #bcc4c7;
+                    }
+                }
+                dd {
+                    width: pxTorem(100px);
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: pxTorem(44px);
+    ul {
+        width: 100%;
+        height: 100%;
+        @include box_flex;
+        @include justify(space-between);
+        @include align;
+        li {
+            @include flex;
+            @include box_flex;
+            @include justify(space-between);
+            @include direction(column);
+            @include align;
+            i {
+                font-size: pxTorem(18px)!important;
+                span {
+                    font-size: pxTorem(14px);
+                }
+            }
+        }
+    }
+}
